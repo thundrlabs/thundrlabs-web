@@ -1,10 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="ThundrLabs">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="220" y2="220" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#9d7bff"/>
-      <stop offset="1" stop-color="#5b8bff"/>
+    <linearGradient id="bolt" x1="8" y1="4" x2="24" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b2f587"/>
+      <stop offset=".45" stop-color="#8bd84b"/>
+      <stop offset="1" stop-color="#0b7d36"/>
     </linearGradient>
   </defs>
-  <rect width="220" height="220" rx="48" fill="#0a0a0f"/>
-  <path d="M122 40 92 118h28l-14 62 58-92h-30l18-48z" fill="url(#g)"/>
+  <rect x="1" y="1" width="30" height="30" rx="7" fill="#0a0d12"/>
+  <rect x="1.5" y="1.5" width="29" height="29" rx="6.5" fill="none" stroke="#8bd84b" stroke-opacity=".28"/>
+  <path d="M18.6 4.5 9.7 17.4h4.9l-1.7 10.1 9.4-13.4h-5.2l2.6-9.7z"
+        fill="url(#bolt)" stroke="#06210f" stroke-width="1.1" stroke-linejoin="round"/>
 </svg>
