@@ -1,5 +1,8 @@
 ---
-const email = 'about@thundrlabs.com';
+const email = 'team@thundrlabs.com';
+const site = 'https://thundrlabs.com';
+const title = 'ThundrLabs — Indie iOS Sports Management Sims';
+const description = 'ThundrLabs, LLC is an indie iOS development lab building deep sports management simulations, including Front Office FC.';
 ---
 
 <!doctype html>
@@ -8,12 +11,18 @@ const email = 'about@thundrlabs.com';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>ThundrLabs</title>
-    <meta name="description" content="ThundrLabs — game studio and web lab." />
-    <meta property="og:title" content="ThundrLabs" />
-    <meta property="og:description" content="Game studio and web lab." />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#06070b" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://thundrlabs.com" />
+    <meta property="og:url" content={site} />
+    <meta property="og:image" content={`${site}/fc-icon.png`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${site}/fc-icon.png`} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,21 +31,144 @@ const email = 'about@thundrlabs.com';
     />
   </head>
   <body>
-    <main class="stage">
-      <div class="wrap">
-        <div class="lockup">
-          <img
-            class="bolt"
-            src="/thundrlabs-logo.svg"
-            alt=""
-            width="82"
-            height="120"
-          />
-          <h1 class="word">Thundr<b>Labs</b><span class="cursor" aria-hidden="true"></span></h1>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-link" href="#game">Game</a>
+        <a class="nav-link" href="#support">Support</a>
+        <a class="nav-link" href="#privacy">Privacy</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="stage" id="top">
+        <div class="wrap">
+          <div class="lockup">
+            <img
+              class="bolt"
+              src="/thundrlabs-logo.svg"
+              alt=""
+              width="82"
+              height="120"
+            />
+            <h1 class="word">Thundr<b>Labs</b><span class="cursor" aria-hidden="true"></span></h1>
+          </div>
+          <p class="hero-tagline">Indie iOS studio for sports management simulations.</p>
+          <a class="cta" href={`mailto:${email}`}>{email} <span class="arrow" aria-hidden="true">→</span></a>
         </div>
-        <a class="cta" href={`mailto:${email}`}>{email} <span class="arrow" aria-hidden="true">→</span></a>
-      </div>
+      </section>
+
+      <!-- Studio intro -->
+      <section class="section" id="about">
+        <div class="section-inner">
+          <span class="eyebrow">About the studio</span>
+          <h2 class="section-title">Built for managers, not spectators.</h2>
+          <p class="section-body">
+            <strong>ThundrLabs, LLC</strong> is an indie iOS development lab focused on deep,
+            single-player sports management games. We care about systems that matter over the long
+            run — budgets, scouting reports, aging squads, and the decisions that don’t show their
+            price until three seasons later.
+          </p>
+        </div>
+      </section>
+
+      <!-- Front Office FC -->
+      <section class="section section--game" id="game">
+        <div class="section-inner game-layout">
+          <div class="game-copy">
+            <div class="app-meta">
+
+              <img
+                class="crest-badge"
+                src="/fc-crest.svg"
+                alt="Front Office FC crest"
+                width="48"
+                height="55"
+              />
+              <div class="app-meta__text">
+                <span class="badge">Coming to the App Store</span>
+                <h2 class="game-title">Front Office FC</h2>
+                <p class="game-subtitle">A football management sim for iOS.</p>
+              </div>
+            </div>
+            <p class="section-body">
+              You inherit a club, a salary cap, and a squad you didn’t pick. Every player has a true
+              ability rating the game never shows you — you work from scout reports, match
+              performances, and your own judgment. Sign badly and you’ll be paying for it three
+              seasons from now.
+            </p>
+            <div class="feature-grid">
+              <div class="feature-card">
+                <h3>Scout, don’t scroll</h3>
+                <p>Player reports and match output replace raw overall ratings.</p>
+              </div>
+              <div class="feature-card">
+                <h3>Cap consequences</h3>
+                <p>Every contract echoes across future windows and rebuilds.</p>
+              </div>
+              <div class="feature-card">
+                <h3>Seasons that remember</h3>
+                <p>Squads age, develop, retire, and carry over year to year.</p>
+              </div>
+              <div class="feature-card">
+                <h3>Offline-first</h3>
+                <p>Single-player, no ads, no analytics, no live servers required.</p>
+              </div>
+            </div>
+          </div>
+
+          <figure class="screenshot-wrap">
+            <div class="screenshot-frame">
+              <img
+                class="screenshot"
+                src="/fc_screenshot.jpg"
+                alt="Front Office FC iOS screenshot showing the KC Union home screen, next fixture, board confidence, and inbox."
+                width="603"
+                height="1159"
+              />
+            </div>
+            <!-- <figcaption class="screenshot-caption">Matchday 1 of the 1994 season.</figcaption> -->
+          </figure>
+        </div>
+      </section>
+
+      <!-- Support -->
+      <section class="section" id="support">
+        <div class="section-inner">
+          <span class="eyebrow">Support</span>
+          <h2 class="section-title">We read every email.</h2>
+          <p class="section-body">
+            For bugs, feedback, press, or partnership questions about Front Office FC or ThundrLabs,
+            reach us directly.
+          </p>
+          <a class="cta cta--large" href={`mailto:${email}`}>{email} <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </section>
+
+      <!-- Privacy -->
+      <section class="section" id="privacy">
+        <div class="section-inner">
+          <span class="eyebrow">Privacy</span>
+          <h2 class="section-title">No data collection. Period.</h2>
+          <p class="section-body">
+            Front Office FC does not collect personal information, run analytics, display ads, or
+            share any data with third parties. Your game saves are stored locally on your device.
+          </p>
+        </div>
+      </section>
     </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <p class="footer__legal">© 2026 ThundrLabs, LLC. All rights reserved.</p>
+        <nav class="footer__nav" aria-label="Footer">
+          <a href="#game">Game</a>
+          <a href="#support">Support</a>
+          <a href="#privacy">Privacy</a>
+          <a href={`mailto:${email}`}>Contact</a>
+        </nav>
+      </div>
+    </footer>
 
     <style>
       *,
@@ -53,11 +185,16 @@ const email = 'about@thundrlabs.com';
         --pale: #e3fcba;
         --fg: #f4f6f4;
         --muted: #8a9488;
+        --line: rgba(255, 255, 255, 0.08);
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 64px;
       }
 
       html,
       body {
-        height: 100%;
         margin: 0;
       }
 
@@ -66,19 +203,24 @@ const email = 'about@thundrlabs.com';
         -webkit-font-smoothing: antialiased;
         background: var(--ink);
         color: var(--fg);
-        overflow: hidden;
+        overflow-x: hidden;
       }
 
+      img,
+      svg {
+        display: block;
+      }
+
+      /* Hero stage */
       .stage {
         position: relative;
-        min-height: 100svh;
+        min-height: calc(100svh - 64px);
         display: grid;
         place-items: center;
         isolation: isolate;
         padding: clamp(1.5rem, 5vw, 4rem);
       }
 
-      /* green horizon glow */
       .stage::before {
         content: '';
         position: absolute;
@@ -90,7 +232,6 @@ const email = 'about@thundrlabs.com';
           var(--ink);
       }
 
-      /* subtle tech grid */
       .stage::after {
         content: '';
         position: absolute;
@@ -105,12 +246,49 @@ const email = 'about@thundrlabs.com';
         mask-image: radial-gradient(75% 60% at 50% 40%, #000 30%, transparent 78%);
       }
 
+      /* Header */
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1rem;
+        height: 64px;
+        padding: 0 clamp(1.5rem, 5vw, 4rem);
+        background: rgba(6, 7, 11, 0.75);
+        border-bottom: 1px solid rgba(139, 216, 75, 0.12);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: clamp(1.2rem, 3vw, 2rem);
+      }
+
+      .nav-link {
+        font-size: 0.93rem;
+        font-weight: 500;
+        color: var(--muted);
+        text-decoration: none;
+        transition: color 0.15s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus-visible {
+        color: var(--lime);
+      }
+
+      /* Hero lockup */
       .wrap {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: clamp(1.8rem, 4vw, 2.6rem);
+        gap: clamp(1.6rem, 3.5vw, 2.2rem);
       }
 
       .lockup {
@@ -157,6 +335,14 @@ const email = 'about@thundrlabs.com';
         }
       }
 
+      .hero-tagline {
+        margin: 0;
+        max-width: 34ch;
+        font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+        color: var(--muted);
+        line-height: 1.4;
+      }
+
       .cta {
         display: inline-flex;
         align-items: center;
@@ -170,7 +356,7 @@ const email = 'about@thundrlabs.com';
         border-radius: 0.7rem;
         border: 1px solid rgba(139, 216, 75, 0.35);
         background: rgba(52, 194, 74, 0.06);
-        transition: transform 0.18s ease;
+        transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
       }
 
       .cta:hover,
@@ -185,11 +371,255 @@ const email = 'about@thundrlabs.com';
         color: var(--lime);
       }
 
+      .cta--large {
+        font-size: 1.1rem;
+        padding: 0.85rem 1.35rem;
+      }
+
+      /* Sections */
+      .section {
+        position: relative;
+        padding: clamp(4rem, 10vw, 7rem) clamp(1.5rem, 5vw, 4rem);
+      }
+
+      .section--game {
+        background: linear-gradient(180deg, rgba(52, 194, 74, 0.06), transparent 40%),
+          var(--ink);
+      }
+
+      .section-inner {
+        max-width: 72rem;
+        margin: 0 auto;
+      }
+
+      .eyebrow {
+        display: block;
+        margin-bottom: 0.75rem;
+        font-family: 'Geist Mono', monospace;
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--lime);
+      }
+
+      .section-title {
+        margin: 0 0 1.25rem;
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+      }
+
+      .section-body {
+        margin: 0 0 1.5rem;
+        max-width: 58ch;
+        font-size: clamp(1.05rem, 2vw, 1.2rem);
+        line-height: 1.6;
+        color: var(--muted);
+      }
+
+      .section-body strong {
+        color: var(--fg);
+        font-weight: 600;
+      }
+
+      .section-body:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Game layout */
+      .game-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: clamp(3rem, 6vw, 5rem);
+        align-items: start;
+      }
+
+      @media (min-width: 900px) {
+        .game-layout {
+          grid-template-columns: 1.1fr 0.9fr;
+        }
+      }
+
+      .app-meta {
+        display: flex;
+        align-items: center;
+        gap: 1.1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .app-icon {
+        width: clamp(72px, 10vw, 96px);
+        height: auto;
+        border-radius: 22px;
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+      }
+
+      .crest-badge {
+        width: clamp(36px, 5vw, 48px);
+        height: auto;
+        margin-left: -0.25rem;
+        filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+      }
+
+      .app-meta__text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+
+      .badge {
+        align-self: flex-start;
+        font-family: 'Geist Mono', monospace;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--pale);
+        padding: 0.35rem 0.65rem;
+        border-radius: 999px;
+        border: 1px solid rgba(139, 216, 75, 0.45);
+        background: rgba(52, 194, 74, 0.1);
+      }
+
+      .game-title {
+        margin: 0;
+        font-size: clamp(1.8rem, 4vw, 2.4rem);
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+      }
+
+      .game-subtitle {
+        margin: 0;
+        font-size: 1rem;
+        color: var(--muted);
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .feature-card {
+        padding: 1.25rem;
+        border-radius: 1rem;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.02);
+        transition: border-color 0.18s ease, background 0.18s ease;
+      }
+
+      .feature-card:hover {
+        border-color: rgba(139, 216, 75, 0.35);
+        background: rgba(52, 194, 74, 0.05);
+      }
+
+      .feature-card h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--fg);
+      }
+
+      .feature-card p {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: var(--muted);
+      }
+
+      /* Screenshot */
+      .screenshot-wrap {
+        margin: 0 auto;
+        max-width: 420px;
+      }
+
+      .screenshot-frame {
+        position: relative;
+        padding: 0.65rem;
+        border-radius: 42px;
+        background: linear-gradient(160deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+        box-shadow:
+          0 32px 80px rgba(0, 0, 0, 0.55),
+          inset 0 1px 1px rgba(255, 255, 255, 0.15);
+      }
+
+      .screenshot-frame::before {
+        content: '';
+        position: absolute;
+        inset: 0.65rem;
+        border-radius: 36px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        pointer-events: none;
+        z-index: 2;
+      }
+
+      .screenshot {
+        width: 100%;
+        height: auto;
+        border-radius: 36px;
+        display: block;
+      }
+
+      .screenshot-caption {
+        margin-top: 1rem;
+        text-align: center;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+
+      /* Footer */
+      .footer {
+        padding: 2.5rem clamp(1.5rem, 5vw, 4rem);
+        border-top: 1px solid var(--line);
+      }
+
+      .footer__inner {
+        max-width: 72rem;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .footer__legal {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      .footer__nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem 1.5rem;
+      }
+
+      .footer__nav a {
+        font-size: 0.9rem;
+        color: var(--muted);
+        text-decoration: none;
+        transition: color 0.15s ease;
+      }
+
+      .footer__nav a:hover,
+      .footer__nav a:focus-visible {
+        color: var(--lime);
+      }
+
       @media (prefers-reduced-motion: reduce) {
         .cursor {
           animation: none;
         }
-        .cta {
+        .cta,
+        .feature-card,
+        .nav-link,
+        .footer__nav a {
           transition: none;
         }
       }
